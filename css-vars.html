@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vars CSS</title>
+  <style>
+    /* объявление переменной */
+    :root {
+      --color: red;
+    }
+    /* вызов переменной */
+    .color {
+      color: var(--color);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="color">Переменные</div>
+  
+  <script>
+
+    // получаем значение переменной --color
+    var element = document.querySelector(':root');
+    var styles = getComputedStyle(element);
+    var value = styles.getPropertyValue('--color');
+
+    // изменяем значение переменной
+    element.style.setProperty('--color', 'green');
+
+  </script>
+</body>
+</html>
